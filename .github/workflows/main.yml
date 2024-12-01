@@ -24,8 +24,13 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Set base path for GitHub Pages
+      run: echo "BASE_URL=/$(basename $GITHUB_REPOSITORY)" > .env
+
     - name: Build project
-      run: npx vite build
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
+      run: npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
