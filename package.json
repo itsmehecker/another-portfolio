@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build-gh": "vite build --public-url 'https://itsmehecker.github.io/portfolio'",
+    "build-gh": "vite build",
     "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist"
   },
